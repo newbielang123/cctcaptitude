@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Aptitude Test</title>
+  <script type="module" crossorigin src="./dist/assets/index.js"></script>
+  <link rel="stylesheet" crossorigin href="./dist/assets/index.css">
+</head>
+<body>
+
+    <header class="dark">
+        <nav>
+            <div class="logo">
+                <img src="../logo.svg" alt="">
+                <span class="logo-text">Career Path+</span>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">FAQ</a></li>
+                  
+                </ul>
+            </div>
+
+        </nav>
+        
+    </header>
+        
+        
+ 
+    <div class="theme-toggle">
+        <button id="themeToggle">🌙</button>
+    </div>
+
+    <main>
+        <section id="landing" class="active">
+            <h1>Career Aptitude Test</h1>
+            <p>Discover your ideal career path through our comprehensive assessment.</p>
+            <button id="startTest" class="primary-button">Start Test</button>
+        </section>
+
+    </main>
+
+    
+
+    <div class="container">
+
+<!--        
+          <section id="landing" class="active">
+                <h1>Career Aptitude Test</h1>
+                <p>Discover your ideal career path through our comprehensive assessment.</p>
+                <button id="startTest" class="primary-button">Start Test</button>
+            </section>  -->
+      
+        
+        
+
+        <section id="test" class="hidden">
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <div id="timer" class="timer">Time: 00:00</div>
+            <div id="questionContainer">
+           
+            </div>
+            <div class="navigation-buttons">
+                <button id="prevButton" class="secondary-button">Previous</button>
+                <button id="nextButton" class="primary-button">Next</button>
+            </div>
+        </section>
+
+    
+        <section id="results" class="hidden">
+            <h2>Your Career Recommendations</h2>
+            <div id="resultContainer"></div>
+            <div class="result-actions">
+                <button id="saveResults" class="secondary-button">Save Results</button>
+                <button id="printResults" class="secondary-button">Print Results</button>
+                <button id="retakeTest" class="primary-button">Take Test Again</button>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

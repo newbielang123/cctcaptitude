@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aptitude Test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <button id="dark-mode-toggle">🌙</button>
+  </header>
+  <main>
+    <section class="test-container">
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+      <div class="question">
+        <h2 id="question-text">Question 1: Do you enjoy working with numbers?</h2>
+        <div class="options">
+          <button class="option">Yes</button>
+          <button class="option">No</button>
+        </div>
+      </div>
+      <button class="next-question" disabled>Next</button>
+    </section>
+  </main>
+  <script>
+    // Test Logic
+    const questions = [
+      "Do you enjoy working with numbers?",
+      "Are you creative and enjoy designing things?",
+      "Do you like helping others and solving their problems?",
+      "Are you interested in technology and innovation?",
+    ];
+
+    const options = ["Yes", "No"];
+    let currentQuestion = 0;
+    const progressBar = document.querySelector('.progress');
+    const questionText = document.getElementById('question-text');
+    const nextButton = document.querySelector('.next-question');
+
+    function updateQuestion() {
+      questionText.textContent = `Question ${currentQuestion + 1}: ${questions[currentQuestion]}`;
+      progressBar.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+      nextButton.disabled = true;
+    }
+
+    document.querySelectorAll('.option').forEach((button) => {
+      button.addEventListener('click', () => {
+        nextButton.disabled = false;
+      });
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        updateQuestion();
+      } else {
+        window.location.href = 'results.html';
+      }
+    });
+
+    updateQuestion();
+  </script>
+</body>
+</html>
